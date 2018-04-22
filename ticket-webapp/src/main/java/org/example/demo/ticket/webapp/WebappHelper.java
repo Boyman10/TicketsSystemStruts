@@ -1,6 +1,6 @@
 package org.example.demo.ticket.webapp;
 
-import org.example.demo.ticket.business.contract.ManagerFactory;
+import org.example.demo.ticket.business.contract.manager.ManagerFactory;
 
 
 /**
