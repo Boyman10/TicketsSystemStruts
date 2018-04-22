@@ -14,9 +14,14 @@ public class Projet {
 
     // ==================== Attributs ====================
     private Integer id;
+    
+    @NotNull
+    @Size(min = 1, max = 100)
     private String nom;
+    @NotNull
     private Date dateCreation;
     private Boolean cloture;
+    @NotNull
     private Utilisateur responsable;
 
 
