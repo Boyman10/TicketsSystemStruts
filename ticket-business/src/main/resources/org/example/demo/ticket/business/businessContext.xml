@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ===== Déclaration des Managers - No more needed in case of Annotations ===== -->
+    
+    <bean id="abstractManager" abstract="true">
+    	<property name="daoFactory" ref="daoFactory" />
+    </bean>
+    
+    <bean id="projetManager" class="org.example.demo.ticket.business.imple.manager.ProjetManagerImple" parent="abstractManager"/>
+    <bean id="ticketManager" class="org.example.demo.ticket.business.imple.manager.TicketManagerImple" parent="abstractManager"/>
+ 
+    <!-- ===== ManagerFactory - replaced by annotations -->
+    <bean id="managerFactory" class="org.example.demo.ticket.business.imple.manager.ManagerFactoryImple">
+        <property name="projetManager" ref="projetManager"/>
+        <property name="ticketManager" ref="ticketManager"/>
+    </bean>
+</beans>
